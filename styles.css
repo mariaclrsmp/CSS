@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* o * aplica para todos os itens */
+
+:root {
+    font-size: 62.5%;
+    --border-default: 0.1rem solid rgba(0, 0, 0, 0.15);
+    --border-default-radius: 1.2rem;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+}
+
+.content {
+    display: grid;
+    grid-template-areas:
+        ". . . . ."
+        ". hero . form ."
+        ". hero . form ."
+        ". . . . .";
+
+    gap: 8.5rem;
+}
+
+/* para usar o grid area, basta definir um nome para ele e escolher onde ira usá-lo (os pontos acima representam espaços em branco) */
+
+aside {
+    grid-area: hero;
+     /* aqui o grid area para esta seção recebeu o nome de "hero" */
+}
+
+aside h1 {
+    font-size: 6.4rem;
+    font-weight: 500;
+    line-height: 7.5rem;
+}
+
+aside h1 span, main h2 span {
+    color: #FF5678;
+}
+
+main {
+    width: 60rem;
+    height: 52rem;
+    border: var(--border-default);
+    padding: 4.4rem 5.7rem;
+    border-radius: var(--border-default-radius);
+    grid-area: form;
+    position: relative;
+    /* no caso, o grid area para esta seção recebeu o nome de "form" */
+}
+
+main h2 {
+    max-width: 43rem;
+    font-size: 3.6rem;
+}
+
+main .actions {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+main .actions a {
+    background-color: #35E6E9;
+    height: 5.5rem;
+    font-size: 2.4rem;
+    text-decoration: none;
+    border-radius: 1.2rem;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5.4rem;
+}
+
+main .actions a+a {
+    background-color: #FF5678;
+    margin-top: 4.8rem;
+}
+
+/* a partir do segundo link, irá aplicar a regra acima */
+
+main header {
+    display: flex;
+    gap: 0 1.8rem;
+    align-items: center;
+}
+
+main header i {
+    color: #FF5678;
+    font-size: 2.4rem;
+}
+
+main footer p {
+    font-size: 1.6rem;
+    margin-top: 8rem;
+}
+
+main footer a {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    display: block;
+    text-align: center;
+    color: #000;
+}
+
+main form {
+    margin-top: 1.6rem;
+}
+
+main form :is(input,select) {
+/* o :is(xx,xx) seleciona tags para propriedades iguais */
+    width: 490px;
+    height: 5.5rem;
+    background-color: #FFF;
+    border: var(--border-default);
+    border-radius:var(--border-default-radius)
+
+}
+
+main form select {
+    appearance: none;
+
+}
+
+main form .select-div {
+    position: relative;
+}
+
+main form .select-div::after {
+    top: 1.4rem;
+    right: 1.4rem;
+    content: '\f107';
+    font-size: 2.2rem;
+    font-weight: 600;
+    font-family: 'Font Awesome 6 Free';
+    position: absolute;
+    z-index: 1;
+    color: #35E6E9;
+}
+
+main form label {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: lowercase;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+main form .points {
+    position: relative;
+}
+
+main form input + button {
+    position: absolute;
+    right: -3.8rem;
+    top: calc(2.7rem + 2.3rem);
+    background-color: transparent;
+    color: #35E6E9;
+    border: none;
+    font-size: 2.4rem;
+    cursor: pointer;
+
+}
